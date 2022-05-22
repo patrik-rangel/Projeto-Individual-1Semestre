@@ -46,6 +46,16 @@ body {
   color: #ECC03D;
 }
 
+.titulo_header{
+  color: white;
+  text-shadow: 5px 10px 10px #ECC03D;
+  margin: 0 auto;
+  font-family: 'cloister';
+  font-size: 4.5em;
+  font-weight: 600;
+  padding: 2% 0%;
+}
+
 
 /* .titulo {
   color: #32b9cd;
@@ -120,11 +130,15 @@ body {
 }
 
 .next{
+  background-image: url('../assets/imgs-pi/forward.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
   background-color: #ECC03D;
-  width: 10vw;
-  height: 10vh;
-  margin-left: 75%;
-  margin-top: 45%;
+  width: 5vw;
+  height: 7vh;
+  margin-left: 90%;
+  margin-top: 50%;
 }
 
 /* .back{
@@ -135,7 +149,7 @@ body {
 } */
 
 .img_main2{
-  background-image: url("https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2017/12/14/8231dc7e-9843-4894-a81e-bac6a69988cd/djonga");
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Emicida_Festival_Sensacional_2020.jpg/1200px-Emicida_Festival_Sensacional_2020.jpg");
 }
 
 .img_sabota{
@@ -190,9 +204,9 @@ body {
   font-family: 'cloister', sans-serif;
   text-align: center;
   font-size: 4.5em;
-  text-shadow: 5px 5px 10px #ECC03D;
+  text-shadow: 2px 2px 10px #ECC03D;
   margin-top: -1%;
-  font-weight: 500;
+  font-weight: 300;
 }
 
 
