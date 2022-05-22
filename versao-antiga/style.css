@@ -1,0 +1,95 @@
+body{
+    margin: 0;
+}
+
+header {
+    display: flex;
+}
+
+.container {
+    width: 80vw;
+    display: flex;
+    margin: 0 auto;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-image: linear-gradient(to right, black, #595959);
+    position: fixed;
+    width: 100%;
+    box-shadow: 0px 4px 8px yellow;
+    z-index: 1;
+}
+
+.logo img {
+    width: 8vw;
+}
+
+.navbar {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+
+
+}
+
+.navbar li {
+    display: flex;
+
+}
+
+.navbar li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    margin-right: 3vw;
+}
+
+.pai_div{
+    display: flex;
+}
+
+.div1{
+    width: 33.3vw;
+    height: 100vh;
+    background-image: url('https://images.squarespace-cdn.com/content/v1/553fcf0ee4b0c0a025328f04/1477060853847-CR6EUKEF4APD3D3MEIHS/sabotage?format=1000w');
+    background-position: center;
+    background-size: cover;
+}
+
+
+.div1, .div2, .div3{
+    border: solid black 5px;
+}
+
+.div2{
+    width: 33.3vw;
+    height: 100vh;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Emicida_Festival_Sensacional_2020.jpg/1200px-Emicida_Festival_Sensacional_2020.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.div3{
+    width: 33.3vw;
+    height: 100vh;
+    background-image: url('https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2017/12/14/8231dc7e-9843-4894-a81e-bac6a69988cd/djonga');
+    background-position: center;
+    background-size: cover;
+}
+
+.div1:hover{
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+    filter: blur(5px);
+    transition: 1s;
+    cursor: pointer;
+    transform: rotatey(180deg);
+}
+

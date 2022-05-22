@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcquaTec | Página Inicial</title>
+    <script src="./js/funcoes.js"></script>
+    <link rel="icon" href="./assets/icon/favicon.ico">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <!-- <link
+        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet"> -->
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <img class="logo" src="assets/imgs-pi/logo-rap.png" alt="">
+            <ul class="navbar">
+                <li class="agora">Inicial</li>
+                <li>
+                    <a href="./simulador.html">Simulador</a>
+                </li>
+                <li>|</li>
+                <li>
+                    <a href="./login.html">Login</a>
+                </li>
+                <li>
+                    <a href="./cadastro.html">Cadastro</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="principal_main">
+            <div>
+                <div class="img_main">
+                <!-- <div class="back" onclick="returnMusic()"></div> -->
+                <div class="next" onclick="skipMusic()"></div>
+                </div>
+                <div class="player_sabota" onclick="musicPlay()">
+                    <span id="spn_play" style="display:block;"><img src="assets/imgs-pi/botao-play-ponta-de-seta.png"
+                    class="play"></span>
+                    <span id="spn_pause" style="display:none;"><img src="assets/imgs-pi/botao-de-pausa.png"
+                    class="pause" alt=""></span>
+                </div>
+            </div>
+            <div class="box-links">
+                <h2>Rap Forte</h2>
+                <div class="box-list">
+                    <ol class="list-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Cadastro</a></li>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Quiz</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--footer inicio-->
+    <div class="footer">
+        <div class="container">
+            <h4>Feito com amor por um aluno &hearts;SPTech &copy; 2022</h4>
+            <h6>v1.0.1</h6>
+        </div>
+    </div>
+    <!--footer fim-->
+</body>
+
+</html>
+
+<script>
+    var cont_musicas = 0
+    var musicas = ['assets/musics/Sabotage - Um Bom Lugar (Clipe Oficial).mp3', 'assets/musics/1. Djonga - O Cara de Óculos pt. Bia Nogueira.mp3']
+    var audio = new Audio(musicas[cont_musicas])
+    var contadorPlays = 0
+    function musicPlay() {
+        if (contadorPlays % 2 == 0) {
+            audio.play()
+            spn_play.style.display = 'none'
+            spn_pause.style.display = 'block'
+        } else {
+            audio.pause()
+            spn_play.style.display = 'block'
+            spn_pause.style.display = 'none'
+        }
+        contadorPlays++
+    }
+
+    function skipMusic() {
+        cont_musicas++
+        var img_musicas = ['.img_main','img_main2']
+        document.querySelector(img_musicas[0]).classList.add(img_musicas[1])
+    }
+
+/*     function returnMusic(){
+        document.querySelector(img_musicas[1]).classList.add(img_musicas[0])
+    } */
+</script>
