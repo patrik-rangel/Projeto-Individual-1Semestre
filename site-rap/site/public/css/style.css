@@ -121,7 +121,7 @@ body {
 
 .img_main{
   width: 35vw;
-  background-image: url("https://images.squarespace-cdn.com/content/v1/553fcf0ee4b0c0a025328f04/1477060853847-CR6EUKEF4APD3D3MEIHS/sabotage?format=1000w");
+  background-image: url("https://1.bp.blogspot.com/-ngZ-cVox4vY/WIKJYCqNDlI/AAAAAAAAbog/KLBiuQ3Ni0IvvlqDqCEwW9q6oVfYf-CqQCLcB/s1600/rap%2B%25C3%25A9%2Bcompromisso%2Bsabotage%2Bcapa.jpg");
   background-position: center;
   background-size: cover;
   height: 75vh;
@@ -149,7 +149,11 @@ body {
 } */
 
 .img_main2{
-  background-image: url("https://img.redbull.com/images/c_limit,w_1500,h_1000,f_auto,q_auto/redbullcom/2017/12/14/8231dc7e-9843-4894-a81e-bac6a69988cd/djonga");
+  background-image: url("https://studiosol-a.akamaihd.net/uploadfile/letras/albuns/e/e/9/1/628451521047499.jpg");
+}
+
+.img_main3{
+  background-image: url('https://images.genius.com/34a465bcc833f09b6a34c8d6b76b9665.1000x1000x1.jpg');
 }
 
 .img_sabota{

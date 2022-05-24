@@ -40,7 +40,7 @@
     <div class="main">
         <div class="principal_main">
             <div>
-                <div class="img_main">
+                <div id="div_player" class="img_main">
                     <!-- <div class="back" onclick="returnMusic()"></div> -->
                     <div class="next" onclick="skipMusic()"></div>
                 </div>
@@ -81,9 +81,9 @@
 <script>
     var musica_random = 0
     var contadorPlays = 0
-    var musicas = ['assets/musics/Sabotage - Um Bom Lugar (Clipe Oficial).mp3', 'assets/musics/1. Djonga - O Cara de Óculos pt. Bia Nogueira.mp3']
+    var musicas = ['assets/musics/Sabotage - Um Bom Lugar (Clipe Oficial).mp3', 'assets/musics/2 . Djonga - JUNHO DE 94.mp3', 'assets/musics/Da ponte pra cá - Nada Como Um Dia Após O Outro Dia (Ri Depois).mp3']
     var audio = new Audio(musicas[musica_random])
-    function musicPlay() {    
+    function musicPlay() {
         if (contadorPlays % 2 == 0) {
             audio.play()
             spn_play.style.display = 'none'
@@ -95,12 +95,22 @@
         }
         contadorPlays++
     }
-
+    var contSkip = 0
     function skipMusic() {
-        var img_musicas = ['.img_main', 'img_main2']
-        document.querySelector(img_musicas[0]).classList.add(img_musicas[1])
+        var img_musicas = ['.img_main', 'img_main2', 'img_main3']
+        if (contSkip == 0) {
+            div_player.classList.remove(img_musicas[0])
+            div_player.classList.add(img_musicas[1])
+            /* document.querySelector(img_musicas[0]).classList.add(img_musicas[1]) */
+        }
+        if (contSkip == 1) {
+            /* document.querySelector(img_musicas[1]).classList.add(img_musicas[2]) */
+            div_player.classList.remove(img_musicas[1])
+            div_player.classList.add(img_musicas[2])
+        }
+        contSkip++
         /* musica_random = parseInt(Math.random()*2) */
-        musica_random = 1
+        musica_random = contSkip
         audio = new Audio(musicas[musica_random])
     }
 
