@@ -19,7 +19,7 @@
 <body>
     <div class="header">
         <div class="container">
-<!--             <img class="logo" src="assets/imgs-pi/logo-rap.png" alt="">
+            <!--             <img class="logo" src="assets/imgs-pi/logo-rap.png" alt="">
             <ul class="navbar">
                 <li class="agora">Inicial</li>
                 <li>
@@ -79,11 +79,11 @@
 </html>
 
 <script>
-    var musica_random = parseInt(Math.random() * 2)
+    var musica_random = 0
     var contadorPlays = 0
     var musicas = ['assets/musics/Sabotage - Um Bom Lugar (Clipe Oficial).mp3', 'assets/musics/1. Djonga - O Cara de Óculos pt. Bia Nogueira.mp3']
     var audio = new Audio(musicas[musica_random])
-    function musicPlay() {
+    function musicPlay() {    
         if (contadorPlays % 2 == 0) {
             audio.play()
             spn_play.style.display = 'none'
@@ -99,7 +99,9 @@
     function skipMusic() {
         var img_musicas = ['.img_main', 'img_main2']
         document.querySelector(img_musicas[0]).classList.add(img_musicas[1])
-        musicas[math.Random]
+        /* musica_random = parseInt(Math.random()*2) */
+        musica_random = 1
+        audio = new Audio(musicas[musica_random])
     }
 
     /*     function returnMusic(){
