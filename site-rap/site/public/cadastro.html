@@ -33,7 +33,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./simulador.html">Simulador</a>
+                    <a href="./simulador.html">Historia</a>
                 </li>
                 <li>|</li>
                 <li>
@@ -55,7 +55,7 @@
             </div>
         </div>
         <div class="container tamanho-conteudo">
-            <div class="card medio">
+            <div class="card_medio">
                 <h2>Bem-vindo!</h2>
                 <div class="formulario">
 
@@ -76,6 +76,9 @@
                     <span class="tipo_campo">Confirmação da Senha:</span>
                     <input id="confirmacao_senha_input" type="password" placeholder="******">
 
+                    <span class="tipo_campo">Qual seu Rapper favorito?</span>
+                    <input id="rapper_fav" type="text" placeholder="Rapper brasileiro">
+
                     <button class="btn" onclick="cadastrar()">Cadastrar</button>
 
                 </div>
@@ -93,7 +96,7 @@
     <!--footer inicio-->
     <div class="footer">
         <div class="container">
-            <h4>Feito com amor por um aluno &hearts;SPTech &copy; 2022</h4>
+            <h4>FEITO COM AMOR POR UM ALUNO SPTECH</h4>
         </div>
     </div>
     <!--footer fim-->
@@ -113,8 +116,9 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var rapperVar = rapper_fav.value.toUpperCase()
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" ||rapperVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 

@@ -7,6 +7,28 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'AnotherTag';
+  src: url('../assets/fonts/aAnotherTag.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'jacatra';
+  src: url('../assets/fonts/Next\ Custom.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'graffiti';
+  src: url('../assets/fonts/aAttackGraffiti.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -46,7 +68,7 @@ body {
   color: #ECC03D;
 }
 
-.titulo_header{
+.titulo_header {
   color: white;
   text-shadow: 5px 10px 10px #ECC03D;
   margin: 0 auto;
@@ -63,7 +85,7 @@ body {
   font-weight: 500;
 } */
 
-.logo{
+.logo {
   width: 10vw;
 }
 
@@ -74,7 +96,7 @@ body {
   height: fit-content;
   padding: 40px 0;
   color: white;
-  background-image: url(".././assets/imgs/bg-jelly-fish-para_outras_pags.png");
+  background-image: url("https://miro.medium.com/max/1400/1*839ZqvPD-lTBt_PQsc7x9g.jpeg");
   background-size: cover;
 }
 
@@ -85,7 +107,7 @@ body {
   align-items: center;
 }
 
-.tamanho-conteudo { 
+.tamanho-conteudo {
   height: fit-content !important;
 }
 
@@ -103,7 +125,7 @@ body {
 
 /* main */
 
-.main{
+.main {
   background-image: url('https://miro.medium.com/max/1400/1*839ZqvPD-lTBt_PQsc7x9g.jpeg');
   background-position: center;
   background-size: cover;
@@ -111,7 +133,7 @@ body {
   padding: 5%;
 }
 
-.principal_main{
+.principal_main {
   background-color: #59656ffa;
   border: #e3b062 solid 5px;
   width: 80vw;
@@ -119,7 +141,7 @@ body {
   display: flex;
 }
 
-.img_main{
+.img_main {
   width: 35vw;
   background-image: url("https://1.bp.blogspot.com/-ngZ-cVox4vY/WIKJYCqNDlI/AAAAAAAAbog/KLBiuQ3Ni0IvvlqDqCEwW9q6oVfYf-CqQCLcB/s1600/rap%2B%25C3%25A9%2Bcompromisso%2Bsabotage%2Bcapa.jpg");
   background-position: center;
@@ -129,7 +151,7 @@ body {
   display: flex;
 }
 
-.next{
+.next {
   background-image: url('../assets/imgs-pi/forward.png');
   background-repeat: no-repeat;
   background-position: right;
@@ -148,49 +170,50 @@ body {
   margin-top: 45%;
 } */
 
-.img_main2{
+.img_main2 {
   background-image: url("https://studiosol-a.akamaihd.net/uploadfile/letras/albuns/e/e/9/1/628451521047499.jpg");
 }
 
-.img_main3{
+.img_main3 {
   background-image: url('https://images.genius.com/34a465bcc833f09b6a34c8d6b76b9665.1000x1000x1.jpg');
 }
 
-.img_sabota{
+.img_sabota {
   width: 35vw;
   padding: 3% 0% 3% 3%;
 }
 
-.player_sabota{
+.player_sabota {
   border: #000000 solid 2px;
   width: 5vw;
   height: 5vh;
-  background-color: #ECC03D; 
+  background-color: #ECC03D;
   padding: 2% 0% 2% 0%;
   margin-bottom: 2%;
   border-radius: 200px;
   margin-left: 43%;
 }
 
-#spn_play{
+#spn_play {
   width: 5vw;
   height: 7vh;
   margin: 0 auto;
   text-align: center;
 }
 
-#spn_pause{
+#spn_pause {
   width: 5vw;
   height: 7vh;
   margin: 0 auto;
   text-align: center;
 }
 
-.pause, .play{
+.pause,
+.play {
   width: 2vw;
 }
 
-.box-links{
+.box-links {
   background-image: url('https://pbs.twimg.com/media/Eov-cNoWMAIHMn_.jpg:large');
   background-position: center;
   background-repeat: no-repeat;
@@ -203,7 +226,7 @@ body {
   align-items: center;
 }
 
-.box-links h2{
+.box-links h2 {
   color: white;
   font-family: 'cloister', sans-serif;
   text-align: center;
@@ -214,14 +237,14 @@ body {
 }
 
 
-.box-list{
+.box-list {
   display: flex;
   width: 30vw;
   height: 55vh;
   margin-top: -12%;
 }
 
-.list-links{
+.list-links {
   color: #ECC03D;
   font-size: 1.7em;
   font-weight: 600;
@@ -229,27 +252,27 @@ body {
 }
 
 
-.list-links li{
+.list-links li {
   padding: 5% 0%;
 }
 
-.list-links li:nth-child(2){
+.list-links li:nth-child(2) {
   margin-left: 10%;
 }
 
-.list-links li:nth-child(3){
+.list-links li:nth-child(3) {
   margin-left: 20%;
 }
 
-.list-links li:nth-child(4){
+.list-links li:nth-child(4) {
   margin-left: 30%;
 }
 
-.list-links li:nth-child(5){
+.list-links li:nth-child(5) {
   margin-left: 40%;
 }
 
-.list-links a{
+.list-links a {
   color: white;
   text-decoration: none;
 }
@@ -260,10 +283,13 @@ body {
 .footer {
   background-color: #e3b062;
   height: 150px;
-  color: #fff;
+  color: black;
+  text-shadow: 5px 5px 10px;
   display: flex;
-  font-size: 15px;
+  font-size: 1.2em;
+  font-family: 'graffiti';
 }
+
 
 .footer .container {
   justify-content: center;
@@ -273,14 +299,15 @@ body {
 /* LOGIN */
 
 .banner .container .card {
-  background-color: #e5e5e5;
+  background-color: black;
   height: fit-content;
   width: 400px;
   display: flex;
   flex-direction: column;
-  color: palevioletred;
+  color: white;
   align-items: center;
   border-radius: 4px;
+  border: solid 4px #ECC03D;
 }
 
 .card {
@@ -289,7 +316,10 @@ body {
 }
 
 .card h2 {
-  font-size: 30px;
+  font-size: 1.5em;
+  font-weight: 400;
+  font-family: 'graffiti';
+  text-shadow: 5px 5px 10px #ECC03D;
 }
 
 .card h4 {
@@ -306,7 +336,22 @@ button {
 
 /* FORMULARIO */
 
-.alerta_erro{
+.card_medio {
+  background-color: black;
+  border: 4px solid #ECC03D;
+  padding: 0% 5%;
+}
+
+.card_medio h2 {
+  font-family: 'graffiti';
+  text-align: center;
+  text-shadow: 5px 5px 10px #ECC03D;
+  font-weight: 400;
+  font-size: 1.5em;
+}
+
+
+.alerta_erro {
   display: flex;
   justify-content: flex-end;
 }
@@ -323,7 +368,7 @@ button {
   margin-right: 10%;
 }
 
-.card_erro #mensagem_erro{
+.card_erro #mensagem_erro {
   font-weight: 500;
   font-size: 20px;
 }
@@ -340,7 +385,7 @@ button {
 
 input {
   margin-bottom: 10px;
-  border: 2px solid #32b9cd;
+  border: 2px solid #ECC03D;
   padding: 10px;
   text-align: center;
   border-radius: 10px;
@@ -353,8 +398,8 @@ input {
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
+  color: black;
+  background-color: #ECC03D;
   width: 120px;
   align-self: center;
   margin-top: 5px;
@@ -475,9 +520,90 @@ input {
 /* pagina extra - simulador */
 .simulador {
   color: white;
+  background-image: url('https://miro.medium.com/max/1400/1*839ZqvPD-lTBt_PQsc7x9g.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.simulador .container {
+  flex-direction: column;
+  background-color: black;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Quiz */
+
+.all {
+  background-image: url('https://miro.medium.com/max/1400/1*839ZqvPD-lTBt_PQsc7x9g.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.all_conteudo {
+  background-color: black;
+  height: 90vh;
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: solid 5px #ECC03D;
+}
+
+
+.box_pergunta {
+  background-color: white;
+  width: 60vw;
+  height: 25vh;
+  margin-top: 3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.box_pergunta p {
+  font-weight: 800;
+  font-size: 1.7em;
 
 }
 
-.simulador .container {
-  flex-direction: column
+
+.box_alter {
+  background-image: radial-gradient(ellipse at top, white, transparent);
+  /*   background-image: url('https://miro.medium.com/max/1400/1*839ZqvPD-lTBt_PQsc7x9g.jpeg'); */
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1px solid white;
+  width: 60vw;
+  height: 50vh;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.alter {
+  background-color: white;
+  width: 50vw;
+  height: 10vh;
+  margin: 2% 0%;
+  cursor: pointer;
+}
+
+.alter p {
+  margin-left: 3%;
 }
