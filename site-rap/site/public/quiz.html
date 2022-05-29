@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
-    <script src="./js/funcoes.js"></script>
+    <script src="js/funcoes.js"></script>
     <link rel="icon" href="./assets/icon/favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
 
     <div class="all">
         <button onclick="comecar()">Começar</button>
-        <div class="all_conteudo">
+        <div class="all_conteudo" id="div_all_conteudo">
             <div class="box_pergunta">
                 <p id="div_pergunta"></p>
             </div>
@@ -36,6 +36,15 @@
                 </div>
             </div>
         </div>
+        <div class="after">
+            <div id="div_aguardar" class="loading-div">
+                <img src="./assets/circle-loading.gif" id="loading-gif">
+            </div>
+            <div class="resultado" id="div_resultado">
+                <p id="p_resultado"></p>
+                <button onclick="ranking()">Ver o ranking</button>
+            </div>
+        </div>
     </div>
 
 </body>
@@ -43,19 +52,20 @@
 </html>
 
 <script>
-    var perguntas = ['Qual o Album mais vendido do rap nacional', 'teste2', 'teste3', 'teste4', 'teste5', 'teste6']
+    var perguntas = ['Qual o Album mais vendido do rap nacional', 'Quem são os integrantes do Racionais Mc’s?', 'Qual foi o primeiro Rapper brasileiro a ser indicado ao premio BET Hip Hop Awards?', 'teste4', 'teste5', 'teste6', 'teste7', 'teste8', 'teste9', 'teste10']
 
-    var respostas = ['Racionais Mc’s — Sobrevivendo No Inferno (1997)', 'resposta2', 'resposta3', 'resposta4', 'resposta5', 'resposta6']
+    var respostas = ['Racionais Mc’s — Sobrevivendo No Inferno (1997)', 'Edi Rock, KL Jay, Mano Brown e Ice Blue', 'Djonga', 'resposta4', 'resposta5', 'resposta6',
+        'resposta7', 'resposta8', 'resposta9', 'resposta10']
 
-    var alternativas1 = ['Facção Central — Versos Sangrentos (1999)', 'resposta2.1', 'resposta3.1', 'resposta4.1', 'resposta5.1', 'resposta6.1']
+    var alternativas1 = ['Facção Central — Versos Sangrentos (1999)', 'Mano Brown, Ice Blue Ed Motta e KL Jay', 'Mano Brown', 'resposta4.1', 'resposta5.1', 'resposta6.1', 'resposta7.1', 'resposta8.1', 'resposta9.1', 'resposta10.1']
 
-    var alternativas2 = ['Sabotage — Rap é Compromisso (2000)', 'resposta2.2', 'resposta3.2', 'resposta4.2', 'resposta5.2', 'resposta6.2']
+    var alternativas2 = ['Sabotage — Rap é Compromisso (2000)', 'Ice Blue, Mano Brown, Dexter e Ed Motta', 'Sabotage', 'resposta4.2', 'resposta5.2', 'resposta6.2', 'resposta7.2', 'resposta8.2', 'resposta9.2', 'resposta10.2']
 
     var cont = 0
     var cont_acertos = 0
     var cont_erros = 0
 
-    
+
     setInterval(function () {
         box_alter1.style.backgroundColor = 'white'
         box_alter2.style.backgroundColor = 'white'
@@ -65,46 +75,135 @@
 
 
     function comecar() {
-        div_pergunta.innerHTML = perguntas[cont]
-        div_alter1.innerHTML = respostas[cont]
-        div_alter2.innerHTML = alternativas1[cont]
-        div_alter3.innerHTML = alternativas2[cont]
+        if (cont == 0) {
+            div_pergunta.innerHTML = perguntas[cont]
+            div_alter1.innerHTML = respostas[cont]
+            div_alter2.innerHTML = alternativas1[cont]
+            div_alter3.innerHTML = alternativas2[cont]
+        }
+        if (cont == 1) {
+            div_pergunta.innerHTML = perguntas[cont]
+            div_alter1.innerHTML = respostas[cont]
+            div_alter2.innerHTML = alternativas1[cont]
+            div_alter3.innerHTML = alternativas2[cont]
+        }
+        if (cont == 2) {
+            document.getElementById('box_alter1').setAttribute('onclick', 'errado()');
+            document.getElementById('box_alter2').setAttribute('onclick', 'certo()');
+            div_pergunta.innerHTML = perguntas[cont]
+            div_alter1.innerHTML = alternativas1[cont]
+            div_alter2.innerHTML = respostas[cont]
+            div_alter3.innerHTML = alternativas2[cont]
+        }
+        if (cont == 3) {
+            document.getElementById('box_alter2').setAttribute('onclick', 'errado()');
+            document.getElementById('box_alter3').setAttribute('onclick', 'certo()');
+            div_pergunta.innerHTML = perguntas[cont]
+            div_alter1.innerHTML = alternativas2[cont]
+            div_alter2.innerHTML = alternativas1[cont]
+            div_alter3.innerHTML = respostas[cont]
+        }
+        if (cont == 4) {
+            document.getElementById('box_alter3').setAttribute('onclick', 'errado()');
+            document.getElementById('box_alter1').setAttribute('onclick', 'certo()');
+            div_pergunta.innerHTML = perguntas[cont]
+            div_alter1.innerHTML = respostas[cont]
+            div_alter2.innerHTML = alternativas1[cont]
+            div_alter3.innerHTML = alternativas2[cont]
+        }
+        if (cont == 5) {
+            document.getElementById('box_alter1').setAttribute('onclick', 'errado()');
+            document.getElementById('box_alter2').setAttribute('onclick', 'certo()');
+            div_pergunta.innerHTML = perguntas[cont]
+            div_alter1.innerHTML = alternativas1[cont]
+            div_alter2.innerHTML = respostas[cont]
+            div_alter3.innerHTML = alternativas2[cont]
+        }
+        if (cont == 6) {
+            document.getElementById('box_alter2').setAttribute('onclick', 'errado()');
+            document.getElementById('box_alter3').setAttribute('onclick', 'certo()');
+            div_pergunta.innerHTML = perguntas[cont]
+            div_alter1.innerHTML = alternativas1[cont]
+            div_alter2.innerHTML = alternativas2[cont]
+            div_alter3.innerHTML = respostas[cont]
+        }
+        if (cont == 7) {
+            document.getElementById('box_alter3').setAttribute('onclick', 'errado()');
+            document.getElementById('box_alter1').setAttribute('onclick', 'certo()');
+            div_pergunta.innerHTML = perguntas[cont]
+            div_alter1.innerHTML = respostas[cont]
+            div_alter2.innerHTML = alternativas2[cont]
+            div_alter3.innerHTML = alternativas1[cont]
+        }
+        if (cont == 8) {
+            document.getElementById('box_alter1').setAttribute('onclick', 'errado()');
+            document.getElementById('box_alter3').setAttribute('onclick', 'certo()');
+            div_pergunta.innerHTML = perguntas[cont]
+            div_alter1.innerHTML = alternativas1[cont]
+            div_alter2.innerHTML = alternativas2[cont]
+            div_alter3.innerHTML = respostas[cont]
+        }
+        if (cont == 9) {
+            document.getElementById('box_alter3').setAttribute('onclick', 'errado()');
+            document.getElementById('box_alter2').setAttribute('onclick', 'certo()');
+            div_pergunta.innerHTML = perguntas[cont]
+            div_alter1.innerHTML = alternativas1[cont]
+            div_alter2.innerHTML = respostas[cont]
+            div_alter3.innerHTML = alternativas2[cont]
+        }
+        if (cont == 10) {
+            div_all_conteudo.classList.remove('all_conteudo')
+            div_all_conteudo.classList.add('all_conteudo2')
+            /* div_all_conteudo.classList.remove('.all_conteudo') */
+            aguardar()
+            setTimeout(function () {
+                finalizarAguardar()
+            }, 3050)
+            setTimeout(function () {
+                div_resultado.style.display = 'flex'
+                p_resultado.innerHTML = `VOCE ACERTOU ${cont_acertos} E ERROU ${cont_erros}`
+            }, 4000)
+        }
     }
 
 
     function certo() {
         /* console.log('acertou') */
-        if (cont == 0) {
+        /*         if (cont == 0) {
+                    box_alter1.style.backgroundColor = 'green'
+                }
+                if (cont == 1) {
+                    box_alter1.style.backgroundColor = 'green'
+                }
+                if (cont == 2) {
+                    box_alter2.style.backgroundColor = 'green'
+                }
+                if (cont == 3) {
+                    box_alter3.style.backgroundColor = 'green'
+                }
+                if (cont == 4) {
+                    box_alter1.style.backgroundColor = 'green'
+                }
+                if (cont == 5) {
+                    box_alter2.style.backgroundColor = 'green'
+                } */
+        var value1 = document.getElementById('box_alter1').getAttribute('onclick')
+        var value2 = document.getElementById('box_alter2').getAttribute('onclick')
+        var value3 = document.getElementById('box_alter3').getAttribute('onclick')
+        if (value1 == 'certo()') {
             box_alter1.style.backgroundColor = 'green'
         }
-        if (cont == 1) {
-            box_alter1.style.backgroundColor = 'green'
-        }
-        if (cont == 2) {
-            document.getElementById('box_alter1').setAttribute('onclick', 'errado()');
-            document.getElementById('box_alter2').setAttribute('onclick', 'certo()');
+        if (value2 == 'certo()') {
             box_alter2.style.backgroundColor = 'green'
         }
-        if (cont == 3) {
-            document.getElementById('box_alter2').setAttribute('onclick', 'errado()');
-            document.getElementById('box_alter3').setAttribute('onclick', 'certo()');
+        if (value3 == 'certo()') {
             box_alter3.style.backgroundColor = 'green'
-        }
-        if (cont == 4) {
-            document.getElementById('box_alter3').setAttribute('onclick', 'errado()');
-            document.getElementById('box_alter1').setAttribute('onclick', 'certo()');
-            box_alter1.style.backgroundColor = 'green'
-        }
-        if (cont == 5) {
-            document.getElementById('box_alter3').setAttribute('onclick', 'errado()');
-            document.getElementById('box_alter2').setAttribute('onclick', 'certo()');
-            box_alter2.style.backgroundColor = 'green'
         }
         cont++
         cont_acertos++
         setTimeout(function () {
             comecar()
-        },2050)
+        }, 2050)
     }
 
 
@@ -121,14 +220,18 @@
         if (value2 == 'errado()') {
             box_alter2.style.backgroundColor = 'red'
         }
-        if (value2 == 'errado()') {
+        if (value3 == 'errado()') {
             box_alter3.style.backgroundColor = 'red'
         }
         cont++
-        cont_erros ++
+        cont_erros++
         setTimeout(function () {
             comecar()
-        },2050)
+        }, 2050)
+    }
+
+    function ranking(){
+        window.location.href = 'ranking.html'
     }
 
 

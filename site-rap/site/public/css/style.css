@@ -560,6 +560,17 @@ input {
   border: solid 5px #ECC03D;
 }
 
+.all_conteudo2{
+  background-color: black;
+  height: 90vh;
+  width: 70vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: solid 5px #ECC03D;
+  filter: blur(4px);
+}
+
 
 .box_pergunta {
   background-color: white;
@@ -606,4 +617,48 @@ input {
 
 .alter p {
   margin-left: 3%;
+}
+
+.after{
+  position: absolute;
+}
+
+
+
+#div_resultado{
+  background-image: url('https://miro.medium.com/max/1400/1*839ZqvPD-lTBt_PQsc7x9g.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  border: solid 5px #ECC03D;
+  width: 30vw;
+  height: 30vh;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  display: none;
+}
+
+#div_resultado button{
+  background-color: #ECC03D;
+  font-weight: 700;
+  width: 10vw;
+  align-self: center;
+}
+
+#p_resultado{
+  background-color: rgba(0, 0, 0, 0.607);
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'jacatra';
+  height: 10vh;
+  width: 25vw;
+  font-weight: 700;
+  font-size: 1em;
+  color: #ECC03D;
+  text-shadow: 5px 5px 10px #ECC03D;
+  padding: 5% 0%;
 }
