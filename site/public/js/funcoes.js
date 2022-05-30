@@ -52,3 +52,12 @@ function fecharModal() {
     divModal.style.display = "none";
 }
 
+
+// menu
+function pageQuiz(){
+    window.location = "quiz.html";
+}
+
+function pageRanking(){
+    window.location = "ranking.html";
+}
