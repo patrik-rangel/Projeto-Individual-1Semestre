@@ -22,7 +22,7 @@ function buscarUltimasMedidas(req, res) {
 }
 
 
-function buscarMedidasEmTempoReal(req, res) {
+ function buscarMedidasEmTempoReal(req, res) {
 
     var idAquario = req.params.idAquario;
 
@@ -39,7 +39,7 @@ function buscarMedidasEmTempoReal(req, res) {
         console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
-}
+} 
 
 module.exports = {
     buscarUltimasMedidas,

@@ -1,9 +1,8 @@
 var database = require("../database/config");
 
+
 function buscarUltimasMedidas(idAquario, limite_linhas) {
     /* const limite_linhas = 7; */
-
-    var idAquario = req.params.idAquario;
 
     console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
@@ -19,7 +18,7 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
                     where fk_aquario = ${idAquario}
                     order by id desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select count(regiao) from usuario;`;
+        instrucaoSql = `select regiao, count(regiao) as qtd_regiao from usuario group by regiao;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -29,8 +28,7 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     return database.executar(instrucaoSql);
 }
 
-function buscarMedidasEmTempoReal(idAquario) {
-    var idAquario = req.params.idAquario;
+ function buscarMedidasEmTempoReal(idAquario) {
 
     console.log(`Recuperando medidas em tempo real`);
 
@@ -46,7 +44,7 @@ function buscarMedidasEmTempoReal(idAquario) {
                     order by id desc`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select count(regiao) from usuario;`;
+        instrucaoSql = `select regiao, count(regiao) as qtd_regiao from usuario group by regiao;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -54,10 +52,10 @@ function buscarMedidasEmTempoReal(idAquario) {
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
-}
+} 
 
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+     buscarMedidasEmTempoReal 
 }
