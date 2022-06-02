@@ -723,3 +723,87 @@ input {
   background-color: black;
   color: white;
 }
+
+/* RANKING */
+
+.all_ranking{
+  background-image: url('https://miro.medium.com/max/1400/1*839ZqvPD-lTBt_PQsc7x9g.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.box_ranking{
+  background-color: black;
+  box-shadow: 10px 10px 10px black;
+  border: 2px solid #ECC03D;
+  border-radius: 10px;
+  width: 30vw;
+  height: 40vh;
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.box_ranking h2{
+  font-family: 'graffiti';
+  font-size: 2.5em;
+  font-weight: 900;
+  color: white;
+  background-color: #ECC03D;
+  background-image: radial-gradient(#ECC03D, black);
+  width: 30vw;
+  text-align: center;
+  padding: 1% 0%;
+  text-shadow: 5px 5px 5px black;
+  border: solid 1px #ECC03D;
+}
+
+
+.conteudo_box_ranking{
+  width: 25vw;
+  height: 30vh;
+  display: flex;
+}
+
+
+.list_ranking{
+  margin-top: -5%;
+  font-family: 'graffiti';
+  color: white;
+  text-shadow: 5px 5px 5px black;
+}
+
+.list_ranking li{
+  margin-bottom: 10%;
+}
+
+.list_ranking li:nth-child(1){
+  font-size: 3em;
+  font-weight: 300;
+}
+
+.list_ranking li:nth-child(2){
+  font-size: 2em;
+  font-weight: 200;
+}
+
+.list_ranking li:nth-child(3){
+  font-size: 1.3em;
+  font-weight: 100;
+}
+
+
+.grafico_p{
+  background-color: #000000;
+  margin-top: 3%;
+  width: 45vw;
+  height: 45vh;
+}

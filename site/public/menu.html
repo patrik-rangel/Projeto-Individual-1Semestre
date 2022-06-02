@@ -21,7 +21,7 @@
 <body>
     <div class="all_menu">
         <div class="all_conteudo_menu">
-            <h3>Salve <span id="ss_usuario">usuário</span>!</h3>
+            <h3>Salve  <span id="ss_usuario">usuário</span>!</h3>
             <button class="btn_menu" onclick="pageQuiz()">Quiz</button>
             <button class="btn_menu" onclick="pageRanking()">Ranking</button>
         </div>
@@ -30,6 +30,6 @@
 
 <script>
     var nome = sessionStorage.NOME_USUARIO;
-    var ss_usuario = document.getElementById("b_usuario");
+    var ss_usuario = document.getElementById("ss_usuario");
     ss_usuario.innerHTML = nome;
 </script>

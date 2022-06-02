@@ -1,6 +1,11 @@
 var database = require("../database/config");
 
 function buscarUltimasMedidas(idAquario, limite_linhas) {
+    /* const limite_linhas = 7; */
+
+    var idAquario = req.params.idAquario;
+
+    console.log(`Recuperando as ultimas ${limite_linhas} medidas`);
 
     instrucaoSql = ''
 
@@ -14,14 +19,7 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
                     where fk_aquario = ${idAquario}
                     order by id desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select 
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,
-                        momento,
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico
-                    from medida
-                    where fk_aquario = ${idAquario}
-                    order by id desc limit ${limite_linhas}`;
+        instrucaoSql = `select count(regiao) from usuario;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -32,6 +30,9 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
 }
 
 function buscarMedidasEmTempoReal(idAquario) {
+    var idAquario = req.params.idAquario;
+
+    console.log(`Recuperando medidas em tempo real`);
 
     instrucaoSql = ''
 
@@ -45,13 +46,7 @@ function buscarMedidasEmTempoReal(idAquario) {
                     order by id desc`;
 
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select 
-        dht11_temperatura as temperatura, 
-        dht11_umidade as umidade,
-                        DATE_FORMAT(momento,'%H:%i:%s') as momento_grafico, 
-                        fk_aquario 
-                        from medida where fk_aquario = ${idAquario} 
-                    order by id desc limit 1`;
+        instrucaoSql = `select count(regiao) from usuario;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return

@@ -78,6 +78,14 @@
 
                     <span class="tipo_campo">Qual sua quebrada?</span>
                     <input id="quebrada_input" type="text" placeholder="Onde você nasceu">
+                    <span class="tipo_campo">Qual região?</span>
+                    <select name="" id="regiao_select">
+                        <option value="">-- Qual lado? --</option>
+                        <option value="1">ZS</option>
+                        <option value="2">ZO</option>
+                        <option value="3">ZN</option>
+                        <option value="4">ZL</option>
+                    </select>
 
                     <button class="btn" onclick="cadastrar()">Cadastrar</button>
 
@@ -117,8 +125,10 @@
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
         var quebradaVar = quebrada_input.value;
+        var regiaoVar = regiao_select.value;
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" ||quebradaVar == "") {
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || quebradaVar == "" || regiaoVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
@@ -141,7 +151,8 @@
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                quebradaServer: quebradaVar
+                quebradaServer: quebradaVar,
+                regiaoServer: regiaoVar
             })
         }).then(function (resposta) {
 
