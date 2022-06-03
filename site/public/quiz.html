@@ -163,9 +163,32 @@
                 div_resultado.style.display = 'flex'
                 p_resultado.innerHTML = `VOCE ACERTOU ${cont_acertos} E ERROU ${cont_erros}`
             }, 4000)
+            eviarQuizBanco()
         }
     }
 
+    function eviarQuizBanco(){
+        fetch("/medidas/enviarQuiz", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    // crie um atributo que recebe o valor recuperado aqui
+                    // Agora vá para o arquivo routes/medidas.js
+                    acertosServer: cont_acertos
+                })
+            }).then(function (resposta) {
+                if(!Response.ok) throw new Error('Erro na requisição')
+                console.log('erro no fetch')
+                console.log("resposta: ", resposta);
+
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+            }).catch(function(error){
+                console.error(error.message)
+            });
+    }
 
     function certo() {
         /* console.log('acertou') */
@@ -230,9 +253,11 @@
         }, 2050)
     }
 
-    function ranking(){
+    function ranking() {
         window.location.href = 'ranking.html'
     }
+
+
 
 
 

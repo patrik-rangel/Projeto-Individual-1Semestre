@@ -803,7 +803,18 @@ input {
 
 .grafico_p{
   background-color: #000000;
+  border: #ECC03D solid 1px;
+  border-radius: 5px;
   margin-top: 3%;
-  width: 45vw;
+  width: 50vw;
   height: 45vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 5px 5px 10px black;
 }
+
+#grafico_zonas{
+  width: 40vw;
+}
+
