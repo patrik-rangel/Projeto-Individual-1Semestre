@@ -29,7 +29,7 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
     return database.executar(instrucaoSql);
 }
 
- function buscarMedidasEmTempoReal(idAquario) {
+function buscarMedidasEmTempoReal(idAquario) {
 
     console.log(`Recuperando medidas em tempo real`);
 
@@ -53,19 +53,23 @@ function buscarUltimasMedidas(idAquario, limite_linhas) {
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
-} 
+}
 
 
 
-function respostas_quiz(acertos) {
-    let idUsuario = sessionStorage.ID_USUARIO
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", acertos);
+function respostas_quiz(idUsuario, nomeUsuario, acertos) {
+    // let idUsuario = sessionStorage.ID_USUARIO
+     /* var usuario = sessionStorage.ID_USUARIO;  */
+     /* var data = sessionStorage.getItem('chave'); */
+    /* var nome = sessionStorage.NOME_USUARIO; */
+    /* sessionStorage.ID_USUARIO = json.idUsuario; */
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function respostas_quiz():",idUsuario, nomeUsuario ,acertos);
 
-    
+
     // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
     //  e na ordem de inserção dos dados.
     var instrucao = `
-    insert into quiz values (${id_usuario}, ${acertos});` /* `insert into zonas(fkUsuario,nomeZona, votos) values (1,${regiao}, 1);` */;
+    insert into quiz values (${idUsuario}, '${nomeUsuario}' ,${acertos});` /* `insert into zonas(fkUsuario,nomeZona, votos) values (1,${regiao}, 1);` */;
 
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -88,7 +92,7 @@ function buscarDadosQuiz(idAquario, limite_linhas) {
                     where fk_aquario = ${idAquario}
                     order by id desc`;
     } else if (process.env.AMBIENTE_PROCESSO == "desenvolvimento") {
-        instrucaoSql = `select fkUsuario, count(qtdAcertos) from usuario group by fkUsuario;`;
+        instrucaoSql = `select nomeUsuario, qtdAcertos as acertos from quiz group by fkUsuario order by qtdAcertos;`;
     } else {
         console.log("\nO AMBIENTE (produção OU desenvolvimento) NÃO FOI DEFINIDO EM app.js\n");
         return
@@ -101,7 +105,7 @@ function buscarDadosQuiz(idAquario, limite_linhas) {
 
 module.exports = {
     buscarUltimasMedidas,
-     buscarMedidasEmTempoReal,
-     respostas_quiz,
-     buscarDadosQuiz
+    buscarMedidasEmTempoReal,
+    respostas_quiz,
+    buscarDadosQuiz
 }

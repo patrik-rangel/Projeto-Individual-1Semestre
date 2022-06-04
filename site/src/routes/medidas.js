@@ -6,7 +6,7 @@ var medidaController = require("../controllers/medidaController");
 router.get("/ultimas", function (req, res) {
     medidaController.buscarUltimasMedidas(req, res);
 });
-router.get("/enviarQuiz", function (req, res) {
+router.post("/enviarQuiz", function (req, res) {
     medidaController.respostas_quiz(req, res);
 });
 

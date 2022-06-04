@@ -735,8 +735,17 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
+.all_ranking h1{
+  color: black;
+  text-shadow: 5px 5px 2px #ECC03D;
+  font-family: 'graffiti';
+  text-transform: uppercase;
+  font-size: 3em;
+  margin-bottom: -1%;
+}
 
 .box_ranking{
   background-color: black;
@@ -802,19 +811,15 @@ input {
 
 
 .grafico_p{
-  background-color: #000000;
+  background-color: #000000ce;
   border: #ECC03D solid 1px;
   border-radius: 5px;
   margin-top: 3%;
-  width: 50vw;
-  height: 45vh;
+  width: 70vw;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 5px 5px 10px black;
-}
-
-#grafico_zonas{
-  width: 40vw;
 }
 

@@ -52,6 +52,7 @@
 </html>
 
 <script>
+
     var perguntas = ['Qual o Album mais vendido do rap nacional', 'Quem são os integrantes do Racionais Mc’s?', 'Qual foi o primeiro Rapper brasileiro a ser indicado ao premio BET Hip Hop Awards?', 'teste4', 'teste5', 'teste6', 'teste7', 'teste8', 'teste9', 'teste10']
 
     var respostas = ['Racionais Mc’s — Sobrevivendo No Inferno (1997)', 'Edi Rock, KL Jay, Mano Brown e Ice Blue', 'Djonga', 'resposta4', 'resposta5', 'resposta6',
@@ -61,6 +62,8 @@
 
     var alternativas2 = ['Sabotage — Rap é Compromisso (2000)', 'Ice Blue, Mano Brown, Dexter e Ed Motta', 'Sabotage', 'resposta4.2', 'resposta5.2', 'resposta6.2', 'resposta7.2', 'resposta8.2', 'resposta9.2', 'resposta10.2']
 
+    var idUsuario = sessionStorage.ID_USUARIO
+    var nomeUsuario = sessionStorage.NOME_USUARIO
     var cont = 0
     var cont_acertos = 0
     var cont_erros = 0
@@ -176,6 +179,8 @@
                 body: JSON.stringify({
                     // crie um atributo que recebe o valor recuperado aqui
                     // Agora vá para o arquivo routes/medidas.js
+                    idUsuarioServer: idUsuario, 
+                    nomeUsuarioServer : nomeUsuario,          
                     acertosServer: cont_acertos
                 })
             }).then(function (resposta) {
@@ -183,11 +188,13 @@
                 console.log('erro no fetch')
                 console.log("resposta: ", resposta);
 
-            }).catch(function (resposta) {
+            }
+            ).catch(function (resposta) {
                 console.log(`#ERRO: ${resposta}`);
             }).catch(function(error){
                 console.error(error.message)
             });
+            
     }
 
     function certo() {
