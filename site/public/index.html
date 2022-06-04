@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AcquaTec | Página Inicial</title>
-    <script src="./js/funcoes.js"></script>
+    <script src="js/funcoes.js"></script>
     <link rel="icon" href="./assets/icon/favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -80,8 +80,8 @@
 <script>
     var musica_random = 0
     var contadorPlays = 0
-    var musicas = ['assets/musics/Sabotage - Um Bom Lugar (Clipe Oficial).mp3', 'assets/musics/2 . Djonga - JUNHO DE 94.mp3', 'assets/musics/Da ponte pra cá - Nada Como Um Dia Após O Outro Dia (Ri Depois).mp3']
-    var img_musicas = ['.img_main', 'img_main2', 'img_main3']
+    var musicas = ['assets/musics/Sabotage - Um Bom Lugar (Clipe Oficial).mp3', 'assets/musics/2 . Djonga - JUNHO DE 94.mp3', 'assets/musics/Da ponte pra cá - Nada Como Um Dia Após O Outro Dia (Ri Depois).mp3', 'assets/musics/LEALL “Faça Dinheiro, Se Mantenha Vivo”.mp3']
+    var img_musicas = ['.img_main', 'img_main2', 'img_main3', 'img_main4']
     var audio = new Audio(musicas[musica_random])
     function musicPlay() {
         if (contadorPlays % 2 == 0) {
@@ -122,10 +122,12 @@
         }
     } */
 
+
     function skipMusic2(){
-        musica_random = parseInt(Math.random()*3)
+        clearMusic()
+        musica_random = parseInt(Math.random()*4)
         img_musicas[musica_random]
-        div_player.classList.toggle(img_musicas[musica_random])
+        div_player.classList.add(img_musicas[musica_random])
         audio = new Audio(musicas[musica_random])
     }
 

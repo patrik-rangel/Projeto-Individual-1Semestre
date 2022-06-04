@@ -69,11 +69,12 @@
     var cont_erros = 0
 
 
-    setInterval(function () {
+/*     setInterval(function () {
         box_alter1.style.backgroundColor = 'white'
         box_alter2.style.backgroundColor = 'white'
         box_alter3.style.backgroundColor = 'white'
-    }, 2000)
+    }, 2000) */
+
 
 
 
@@ -165,36 +166,36 @@
             setTimeout(function () {
                 div_resultado.style.display = 'flex'
                 p_resultado.innerHTML = `VOCE ACERTOU ${cont_acertos} E ERROU ${cont_erros}`
-            }, 4000)
+            }, 3500)
             eviarQuizBanco()
         }
     }
 
-    function eviarQuizBanco(){
+    function eviarQuizBanco() {
         fetch("/medidas/enviarQuiz", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    // crie um atributo que recebe o valor recuperado aqui
-                    // Agora vá para o arquivo routes/medidas.js
-                    idUsuarioServer: idUsuario, 
-                    nomeUsuarioServer : nomeUsuario,          
-                    acertosServer: cont_acertos
-                })
-            }).then(function (resposta) {
-                if(!Response.ok) throw new Error('Erro na requisição')
-                console.log('erro no fetch')
-                console.log("resposta: ", resposta);
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/medidas.js
+                idUsuarioServer: idUsuario,
+                nomeUsuarioServer: nomeUsuario,
+                acertosServer: cont_acertos
+            })
+        }).then(function (resposta) {
+            if (!Response.ok) throw new Error('Erro na requisição')
+            console.log('erro no fetch')
+            console.log("resposta: ", resposta);
 
-            }
-            ).catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
-            }).catch(function(error){
-                console.error(error.message)
-            });
-            
+        }
+        ).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        }).catch(function (error) {
+            console.error(error.message)
+        });
+
     }
 
     function certo() {
@@ -232,8 +233,11 @@
         cont++
         cont_acertos++
         setTimeout(function () {
+            clearQuiz()
+        }, 900)
+        setTimeout(function () {
             comecar()
-        }, 2050)
+        }, 1000)
     }
 
 
@@ -256,8 +260,11 @@
         cont++
         cont_erros++
         setTimeout(function () {
+            clearQuiz()
+        }, 900)
+        setTimeout(function () {
             comecar()
-        }, 2050)
+        }, 1000)
     }
 
     function ranking() {

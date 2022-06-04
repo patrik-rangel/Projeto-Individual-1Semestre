@@ -61,3 +61,17 @@ function pageQuiz(){
 function pageRanking(){
     window.location = "ranking.html";
 }
+
+
+// home
+function clearMusic(){
+    div_player.classList.remove(img_musicas[musica_random])
+    }
+
+
+// quiz
+function clearQuiz() {
+    box_alter1.style.backgroundColor = 'white'
+    box_alter2.style.backgroundColor = 'white'
+    box_alter3.style.backgroundColor = 'white'
+}
