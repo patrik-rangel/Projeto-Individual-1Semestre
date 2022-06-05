@@ -19,7 +19,7 @@
 <body>
 
     <div class="all">
-        <button onclick="comecar()">Começar</button>
+        <div class="box_btn_comecar" id="box_btn"><button class="btn_comecar" id="btn" onclick="aparecer_prgt()">incio</button></div>
         <div class="all_conteudo" id="div_all_conteudo">
             <div class="box_pergunta">
                 <p id="div_pergunta"></p>
@@ -41,7 +41,7 @@
                 <img src="assets/ajax-loading-icon-18.gif" id="loading-gif">
             </div>
             <div class="resultado" id="div_resultado">
-                <p id="p_resultado"></p>
+                <p id="p_resultado">voce acertou <span id="qtd_acertos" class="contagem"> 10 </span> e errou <span id="qtd_erros" class="contagem"> 0</span></p>
                 <button onclick="ranking()">Ver o ranking</button>
             </div>
         </div>
@@ -53,14 +53,13 @@
 
 <script>
 
-    var perguntas = ['Qual o Album mais vendido do rap nacional', 'Quem são os integrantes do Racionais Mc’s?', 'Qual foi o primeiro Rapper brasileiro a ser indicado ao premio BET Hip Hop Awards?', 'teste4', 'teste5', 'teste6', 'teste7', 'teste8', 'teste9', 'teste10']
+    var perguntas = ['Qual o Album mais vendido do rap nacional?', 'Quem são os integrantes do Racionais Mc’s?', 'Qual foi o primeiro Rapper brasileiro a ser indicado ao premio BET Hip Hop Awards?', 'Quais são os 4 elementos do hip hop?', 'Laboratório Fantasma é uma famosa marca de roupas, já participando até da São Paulo Fashion Week. Qual rapper que é dono dessa marca? ', 'Quem são os principais integrantes do grupo "509-E"?', 'Qual famoso grupo de rap brasileiro nasceu no carandiru', 'teste8', 'teste9', 'teste10']
 
-    var respostas = ['Racionais Mc’s — Sobrevivendo No Inferno (1997)', 'Edi Rock, KL Jay, Mano Brown e Ice Blue', 'Djonga', 'resposta4', 'resposta5', 'resposta6',
-        'resposta7', 'resposta8', 'resposta9', 'resposta10']
+    var respostas = ['Racionais Mc’s — Sobrevivendo No Inferno (1997)', 'Edi Rock, KL Jay, Mano Brown e Ice Blue', 'Djonga', 'breakdance, DJ, grafite e o rap', 'Emicida', 'Afro-X e Dexter', '509-E', 'resposta8', 'resposta9', 'resposta10']
 
-    var alternativas1 = ['Facção Central — Versos Sangrentos (1999)', 'Mano Brown, Ice Blue Ed Motta e KL Jay', 'Mano Brown', 'resposta4.1', 'resposta5.1', 'resposta6.1', 'resposta7.1', 'resposta8.1', 'resposta9.1', 'resposta10.1']
+    var alternativas1 = ['Facção Central — Versos Sangrentos (1999)', 'Mano Brown, Ice Blue Ed Motta e KL Jay', 'Mano Brown', 'breakdance, DJ, rap e o MC', 'Dexter', 'Dexter e Thaide', 'Racionais Mc’s', 'resposta8.1', 'resposta9.1', 'resposta10.1']
 
-    var alternativas2 = ['Sabotage — Rap é Compromisso (2000)', 'Ice Blue, Mano Brown, Dexter e Ed Motta', 'Sabotage', 'resposta4.2', 'resposta5.2', 'resposta6.2', 'resposta7.2', 'resposta8.2', 'resposta9.2', 'resposta10.2']
+    var alternativas2 = ['Sabotage — Rap é Compromisso (2000)', 'Ice Blue, Mano Brown, Dexter e Ed Motta', 'Sabotage', 'DJ, grafite, rima e MC', 'Rashid', 'Dexter e Mano Brown', 'Haikaiss', 'resposta8.2', 'resposta9.2', 'resposta10.2']
 
     var idUsuario = sessionStorage.ID_USUARIO
     var nomeUsuario = sessionStorage.NOME_USUARIO
@@ -76,6 +75,12 @@
     }, 2000) */
 
 
+
+    function aparecer_prgt(){
+        box_btn.style.display = 'none'
+        div_all_conteudo.style.display = 'flex'
+        comecar()
+    }
 
 
     function comecar() {
@@ -165,7 +170,8 @@
             }, 3050)
             setTimeout(function () {
                 div_resultado.style.display = 'flex'
-                p_resultado.innerHTML = `VOCE ACERTOU ${cont_acertos} E ERROU ${cont_erros}`
+                qtd_acertos.innerHTML = `${cont_acertos}`
+                qtd_erros.innerHTML = `${cont_erros}`
             }, 3500)
             eviarQuizBanco()
         }

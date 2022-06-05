@@ -29,6 +29,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'street';
+  src: url('../assets/fonts/DOCALLISMEONSTREET.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -349,11 +356,11 @@ body {
   background-color: #e3b062;
   height: 150px;
   color: black;
-  text-shadow: 5px 5px 20px black;
+  text-shadow: 0px 15px 20px black;
   display: flex;
   font-weight: 200;
-  font-size: 1.2em;
-  font-family: 'graffiti';
+  font-size: 2.5em;
+  font-family: 'street';
 }
 
 
@@ -638,14 +645,36 @@ input {
 }
 
 
+.btn_comecar{
+  background-image: linear-gradient(to right, white, rgb(207, 207, 207));
+  box-shadow: 0px 0px 10px white;
+  border: solid 3px black;
+  width: 40vw;
+  height: 25vh;
+  font-size: 6em;
+  font-weight: 800;
+  font-family: 'street';
+  text-transform: uppercase;
+}
+
+.btn_comecar:hover{
+  transition: 0.5s;
+  background-image: linear-gradient(to right, rgb(0, 0, 0), rgb(35, 35, 35));
+  box-shadow: 0px 0px 10px rgb(0, 0, 0);
+  color: white;
+  border: solid 3px rgb(255, 255, 255);
+}
+
 .all_conteudo {
   background-color: black;
+  box-shadow: 5px 5px 10px black;
   height: 90vh;
   width: 70vw;
   display: flex;
   align-items: center;
   flex-direction: column;
   border: solid 5px #ECC03D;
+  display: none;
 }
 
 .all_conteudo2 {
@@ -696,11 +725,20 @@ input {
 
 
 .alter {
+  align-items: center;
+  justify-content: left;
+  display: flex;
   background-color: white;
   width: 50vw;
   height: 10vh;
   margin: 2% 0%;
   cursor: pointer;
+}
+
+.alter:hover{
+  transition: 0.4s;
+  width: 51vw;
+  height: 11vh;
 }
 
 .alter p {
@@ -719,7 +757,8 @@ input {
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
-  border: solid 5px #ECC03D;
+  border: solid 5px #000000;
+  box-shadow: 5px 5px 10px rgb(0, 0, 0);
   width: 30vw;
   height: 30vh;
   justify-content: center;
@@ -733,22 +772,32 @@ input {
   font-weight: 700;
   width: 10vw;
   align-self: center;
+  margin-top: -5%;
 }
 
 #p_resultado {
-  background-color: rgba(0, 0, 0, 0.607);
+  background-color: rgba(255, 255, 255, 0.607);
+  backdrop-filter: blur(2px);
+  border: solid 3px #ECC03D;
   align-self: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'jacatra';
+  font-family: 'graffiti';
   height: 10vh;
   width: 25vw;
   font-weight: 700;
-  font-size: 1em;
-  color: #ECC03D;
-  text-shadow: 5px 5px 10px #ECC03D;
-  padding: 5% 0%;
+  font-size: 1.2em;
+  color: rgb(0, 0, 0);
+  text-shadow: 5px 5px 10px #ffffff;
+  padding: 6% 3%;
+}
+
+.contagem{
+  color: blue;
+  margin: 0% 3%;
+  font-size: 1.3em;
+  font-weight: 800;
 }
 
 
@@ -829,14 +878,27 @@ input {
   justify-content: center;
 }
 
-.all_ranking h1 {
+
+.box_texto_ranking{
+  background-color: #ecc03db1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 15vh;
+  box-shadow: 0px 0px 15px rgb(255, 255, 255);
+  border: solid 1px white;
+}
+
+
+.text_ranking {
   color: black;
   text-shadow: 5px 5px 2px #ECC03D;
   font-family: 'graffiti';
   text-transform: uppercase;
   font-size: 3em;
-  margin-bottom: -1%;
 }
+
 
 .box_ranking {
   background-color: black;
