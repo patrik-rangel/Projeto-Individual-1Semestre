@@ -42,8 +42,8 @@ body {
 }
 
 .header {
-  border-bottom: 3px solid #ECC03D;
   background-color: black;
+  border-bottom: solid 2px #ECC03D;
 }
 
 .header .container {
@@ -70,7 +70,7 @@ body {
 
 .titulo_header {
   color: white;
-  text-shadow: 5px 10px 10px #ECC03D;
+  text-shadow: 0px 5px 10px #ECC03D;
   margin: 0 auto;
   font-family: 'cloister';
   font-size: 4.5em;
@@ -96,8 +96,18 @@ body {
   height: fit-content;
   padding: 40px 0;
   color: white;
-  background-image: url("https://miro.medium.com/max/1400/1*839ZqvPD-lTBt_PQsc7x9g.jpeg");
+  background-image: url("../assets/imgs-pi/muro-grafiti.jpeg");
   background-size: cover;
+  background-position: center;
+}
+
+.banner2{
+  height: 50vh;
+  padding: 40px 0;
+  color: white;
+  background-image: url("../assets/imgs-pi/muro-grafiti.jpeg");
+  background-size: cover;
+  background-position: center;
 }
 
 .banner .container {
@@ -126,60 +136,96 @@ body {
 /* main */
 
 .main {
-  background-image: url('https://miro.medium.com/max/1400/1*839ZqvPD-lTBt_PQsc7x9g.jpeg');
+  background-image: url('../assets/imgs-pi/muro-grafiti.jpeg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   padding: 5%;
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
 }
 
 .principal_main {
-  background-color: #59656ffa;
-  border: #e3b062 solid 5px;
+  background: rgba(86, 86, 86, 0.373);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0px 0px 50px #ffffff;
+  border-radius: 5px;
   width: 80vw;
   margin: 0 auto;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95vh;
 }
+
 
 .img_main {
   width: 35vw;
-  background-image: url("https://1.bp.blogspot.com/-ngZ-cVox4vY/WIKJYCqNDlI/AAAAAAAAbog/KLBiuQ3Ni0IvvlqDqCEwW9q6oVfYf-CqQCLcB/s1600/rap%2B%25C3%25A9%2Bcompromisso%2Bsabotage%2Bcapa.jpg");
+  background-image: url('../assets/imgs-pi/rap-e-compromisso-sabotage-capa.jpg');
   background-position: center;
   background-size: cover;
   height: 75vh;
-  margin: 3%;
+  margin: 5% 3% 3% 3%;
   display: flex;
+  box-shadow: 15px 15px 15px black;
+  border: solid 2px black;
 }
 
 .next {
-  background-image: url('../assets/imgs-pi/forward.png');
+  background-image: url('../assets/imgs-pi/skip-yellow.png');
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: center;
   background-size: contain;
-  background-color: #ECC03D;
   width: 5vw;
   height: 7vh;
+  background-color: #000000;
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
   margin-left: 90%;
   margin-top: 50%;
+  opacity: 0.5;
 }
 
-/* .back{
-  background-color: blue;
-  width: 10vw;
-  height: 10vh;
-  margin-top: 45%;
-} */
+.next:hover {
+  opacity: 1;
+  transition: 0.3s;
+}
 
 .img_main2 {
-  background-image: url("https://studiosol-a.akamaihd.net/uploadfile/letras/albuns/e/e/9/1/628451521047499.jpg");
+  background-image: url('../assets/imgs-pi/capa-album-djonga-omqqsd.jpg');
 }
 
 .img_main3 {
-  background-image: url('https://images.genius.com/34a465bcc833f09b6a34c8d6b76b9665.1000x1000x1.jpg');
+  background-image: url('../assets/imgs-pi/capa-album-racionais-ncdao.jpg');
 }
 
 .img_main4 {
-  background-image: url('https://i.scdn.co/image/ab67616d0000b273b5daf53a0da450df09b2d3ce');
+  background-image: url('../assets/imgs-pi/capa-leal-fdsmv.jpg');
+}
+
+.img_main5 {
+  background-image: url('../assets/imgs-pi/capa-album-fbc-sca.png');
+}
+
+.img_main6 {
+  background-image: url('../assets/imgs-pi/capa-album-racionais-sni.jpg');
+}
+
+.img_main7 {
+  background-image: url('../assets/imgs-pi/capa-kyan-omqvd.jpg');
+}
+
+.img_main8 {
+  background-image: url('../assets/imgs-pi/faccao-central-espetaculo-circo-dos-horrores-capa.jpg');
+}
+
+.img_main9 {
+  background-image: url('../assets/imgs-pi/capa-favela-vive-2.jpg');
 }
 
 .img_sabota {
@@ -188,46 +234,61 @@ body {
 }
 
 .player_sabota {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: #000000 solid 2px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.688);
   width: 5vw;
   height: 5vh;
-  background-color: #ECC03D;
-  padding: 2% 0% 2% 0%;
+  background-color: #000000;
   margin-bottom: 2%;
-  border-radius: 200px;
+  padding: 3% 0% 2% 0%;
+  margin-top: 5%;
+  border-radius: 30px;
   margin-left: 43%;
 }
 
-#spn_play {
+.player_sabota:active {
+  transition: 0.3s;
+  box-shadow: 1px 1px 1px black;
+  width: 4.7vw;
+  height: 4.7vh;
+}
+
+#spn_play,
+#spn_pause {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   width: 5vw;
   height: 7vh;
   margin: 0 auto;
   text-align: center;
+}
+
+#spn_play {
+  background-image: url('../assets/imgs-pi/play-yellow.png');
 }
 
 #spn_pause {
-  width: 5vw;
-  height: 7vh;
-  margin: 0 auto;
-  text-align: center;
+  background-image: url('../assets/imgs-pi/pause-yellow.png');
 }
 
-.pause,
-.play {
-  width: 2vw;
-}
 
 .box-links {
-  background-image: url('https://pbs.twimg.com/media/Eov-cNoWMAIHMn_.jpg:large');
+  background-image: url('../assets/imgs-pi/AnyConv.com__foto-zn.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  box-shadow: -15px 15px 15px black;
+  border: solid 2px black;
   width: 35vw;
   height: 75vh;
-  margin: 1% 0% 0% 8%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: -6% 0% 0% 5%;
 }
 
 .box-links h2 {
@@ -288,8 +349,9 @@ body {
   background-color: #e3b062;
   height: 150px;
   color: black;
-  text-shadow: 5px 5px 10px;
+  text-shadow: 5px 5px 20px black;
   display: flex;
+  font-weight: 200;
   font-size: 1.2em;
   font-family: 'graffiti';
 }
@@ -303,7 +365,7 @@ body {
 /* LOGIN */
 
 .banner .container .card {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.899);
   height: fit-content;
   width: 400px;
   display: flex;
@@ -314,19 +376,34 @@ body {
   border: solid 4px #ECC03D;
 }
 
-.card {
+.card2{
+  background-color: rgba(0, 0, 0, 0.899);
+  box-shadow: 5px 5px 10px rgb(0, 0, 0);
+  height: fit-content;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  align-items: center;
+  border-radius: 4px;
+  border: solid 4px #ECC03D;
+  padding-bottom: 3%;
+  margin: 0 auto;
+}
+
+.card2 {
   display: flex;
   justify-content: space-around;
 }
 
-.card h2 {
+.card2 h2 {
   font-size: 1.5em;
   font-weight: 400;
   font-family: 'graffiti';
   text-shadow: 5px 5px 10px #ECC03D;
 }
 
-.card h4 {
+.card2 h4 {
   font-size: 16px;
 }
 
@@ -341,7 +418,8 @@ button {
 /* FORMULARIO */
 
 .card_medio {
-  background-color: black;
+  background-color: rgba(0, 0, 0, 0.899);
+  box-shadow: 5px 5px 10px rgb(0, 0, 0);
   border: 4px solid #ECC03D;
   padding: 0% 5%;
 }
@@ -524,13 +602,13 @@ input {
 /* pagina extra - simulador */
 .simulador {
   color: white;
-  background-image: url('https://miro.medium.com/max/1400/1*839ZqvPD-lTBt_PQsc7x9g.jpeg');
+  background-image: url('../assets/imgs-pi/muro-grafiti.jpeg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-.simulador h2{
+.simulador h2 {
   font-family: 'graffiti';
   text-shadow: 5px 5px 3px #ECC03D;
   font-weight: 600;
@@ -548,7 +626,7 @@ input {
 /* Quiz */
 
 .all {
-  background-image: url('https://miro.medium.com/max/1400/1*839ZqvPD-lTBt_PQsc7x9g.jpeg');
+  background-image: url('../assets/imgs-pi/muro-grafiti.jpeg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -570,7 +648,7 @@ input {
   border: solid 5px #ECC03D;
 }
 
-.all_conteudo2{
+.all_conteudo2 {
   background-color: black;
   height: 90vh;
   width: 70vw;
@@ -629,14 +707,14 @@ input {
   margin-left: 3%;
 }
 
-.after{
+.after {
   position: absolute;
 }
 
 
 
-#div_resultado{
-  background-image: url('https://miro.medium.com/max/1400/1*839ZqvPD-lTBt_PQsc7x9g.jpeg');
+#div_resultado {
+  background-image: url('../assets/imgs-pi/muro-grafiti.jpeg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -650,14 +728,14 @@ input {
   display: none;
 }
 
-#div_resultado button{
+#div_resultado button {
   background-color: #ECC03D;
   font-weight: 700;
   width: 10vw;
   align-self: center;
 }
 
-#p_resultado{
+#p_resultado {
   background-color: rgba(0, 0, 0, 0.607);
   align-self: center;
   display: flex;
@@ -676,7 +754,7 @@ input {
 
 /* menu */
 .all_menu {
-  background-image: url('https://pbs.twimg.com/media/Eov-cNoWMAIHMn_.jpg:large');
+  background-image: url('../assets/imgs-pi/AnyConv.com__foto-zn.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -689,6 +767,8 @@ input {
 
 .all_conteudo_menu {
   background-image: radial-gradient(rgba(255, 255, 255, 0.192), black);
+  backdrop-filter: blur(2px);
+  box-shadow: 5px 5px 10px black;
   height: 90vh;
   width: 70vw;
   display: flex;
@@ -698,14 +778,21 @@ input {
   border: solid 5px #ECC03D;
 }
 
-.all_conteudo_menu h3{
+.all_conteudo_menu:hover{
+  backdrop-filter: blur(10px);
+  height: 90.5vh;
+  width: 70.5vw;
+  transition: 0.9s;
+}
+
+.all_conteudo_menu h3 {
   color: #ECC03D;
   font-family: 'graffiti';
   font-size: 3.5em;
   text-shadow: 5px 5px 3px black;
 }
 
-.btn_menu{
+.btn_menu {
   margin-bottom: 3%;
   width: 30vw;
   height: 10vh;
@@ -716,11 +803,11 @@ input {
   box-shadow: 5px 5px 10px #ECC03D;
 }
 
-.all_menu a{
+.all_menu a {
   color: black;
 }
 
-.btn_menu:hover{
+.btn_menu:hover {
   width: 31vw;
   height: 11vh;
   transition: 0.4s;
@@ -730,8 +817,8 @@ input {
 
 /* RANKING */
 
-.all_ranking{
-  background-image: url('https://miro.medium.com/max/1400/1*839ZqvPD-lTBt_PQsc7x9g.jpeg');
+.all_ranking {
+  background-image: url('../assets/imgs-pi/muro-grafiti.jpeg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -742,7 +829,7 @@ input {
   justify-content: center;
 }
 
-.all_ranking h1{
+.all_ranking h1 {
   color: black;
   text-shadow: 5px 5px 2px #ECC03D;
   font-family: 'graffiti';
@@ -751,7 +838,7 @@ input {
   margin-bottom: -1%;
 }
 
-.box_ranking{
+.box_ranking {
   background-color: black;
   box-shadow: 10px 10px 10px black;
   border: 2px solid #ECC03D;
@@ -765,7 +852,7 @@ input {
   flex-direction: column;
 }
 
-.box_ranking h2{
+.box_ranking h2 {
   font-family: 'graffiti';
   font-size: 2.5em;
   font-weight: 900;
@@ -780,41 +867,41 @@ input {
 }
 
 
-.conteudo_box_ranking{
+.conteudo_box_ranking {
   width: 25vw;
   height: 30vh;
   display: flex;
 }
 
 
-.list_ranking{
+.list_ranking {
   margin-top: -5%;
   font-family: 'graffiti';
   color: white;
   text-shadow: 5px 5px 5px black;
 }
 
-.list_ranking li{
+.list_ranking li {
   margin-bottom: 10%;
 }
 
-.list_ranking li:nth-child(1){
+.list_ranking li:nth-child(1) {
   font-size: 3em;
   font-weight: 300;
 }
 
-.list_ranking li:nth-child(2){
+.list_ranking li:nth-child(2) {
   font-size: 2em;
   font-weight: 200;
 }
 
-.list_ranking li:nth-child(3){
+.list_ranking li:nth-child(3) {
   font-size: 1.3em;
   font-weight: 100;
 }
 
 
-.grafico_p{
+.grafico_p {
   background-color: #000000ce;
   border: #ECC03D solid 1px;
   border-radius: 5px;
@@ -826,4 +913,3 @@ input {
   justify-content: center;
   box-shadow: 5px 5px 10px black;
 }
-

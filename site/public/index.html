@@ -36,7 +36,6 @@
             <h1 class="titulo_header">Rap Forte</h1>
         </div>
     </div>
-
     <div class="main">
         <div class="principal_main">
             <div>
@@ -45,10 +44,8 @@
                     <div class="next" onclick="skipMusic2()"></div>
                 </div>
                 <div class="player_sabota" onclick="musicPlay()">
-                    <span id="spn_play" style="display:block;"><img src="assets/imgs-pi/botao-play-ponta-de-seta.png"
-                            class="play"></span>
-                    <span id="spn_pause" style="display:none;"><img src="assets/imgs-pi/botao-de-pausa.png"
-                            class="pause" alt=""></span>
+                    <span id="spn_play" style="display:block;"></span>
+                    <span id="spn_pause" style="display:none;"></span>
                 </div>
             </div>
             <div class="box-links">
@@ -66,12 +63,41 @@
         </div>
     </div>
 
+<!--     <div class="main">
+        <div class="principal_main">
+        </div>
+        <div class="filho_principal">
+            <div>
+                <div id="div_player" class="img_main">
+                    <div class="next" onclick="skipMusic2()"></div>
+                </div>
+                <div class="player_sabota" onclick="musicPlay()">
+                    <span id="spn_play" style="display:block;"></span>
+                    <span id="spn_pause" style="display:none;"></span>
+                </div>
+            </div>
+            <div class="box-links">
+                <h2>Playlist</h2>
+                <div class="box-list">
+                    <ol class="list-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="cadastro.html">Cadastro</a></li>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="">Quiz</a></li>
+                        <li><a href="#">Contato</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
     <!--footer inicio-->
     <div class="footer">
         <div class="container">
             <h4>FEITO COM AMOR POR UM ALUNO SPTECH</h4>
         </div>
     </div>
+    <audio src="assets/musics/Favela Vive 2 (Cypher) audio – ADL, BK, Funkero e MV Bill (Prod. Índio).mp3"></audio>
     <!--footer fim-->
 </body>
 
@@ -80,8 +106,8 @@
 <script>
     var musica_random = 0
     var contadorPlays = 0
-    var musicas = ['assets/musics/Sabotage - Um Bom Lugar (Clipe Oficial).mp3', 'assets/musics/2 . Djonga - JUNHO DE 94.mp3', 'assets/musics/Da ponte pra cá - Nada Como Um Dia Após O Outro Dia (Ri Depois).mp3', 'assets/musics/LEALL “Faça Dinheiro, Se Mantenha Vivo”.mp3']
-    var img_musicas = ['.img_main', 'img_main2', 'img_main3', 'img_main4']
+    var musicas = ['assets/musics/Sabotage - Um Bom Lugar (Clipe Oficial).mp3', 'assets/musics/2 . Djonga - JUNHO DE 94.mp3', 'assets/musics/Da ponte pra cá - Nada Como Um Dia Após O Outro Dia (Ri Depois).mp3', 'assets/musics/LEALL “Faça Dinheiro, Se Mantenha Vivo”.mp3', 'assets/musics/FBC-Frank-Tikãoft.Chris.mp3', 'assets/musics/capitulo4-versiculo3.mp3', 'assets/musics/Kyan - O Menino Que Virou Deus.mp3', 'assets/musics/faccao-central-castelo-triste.mp3', 'assets/musics/Favela Vive 2 (Cypher) audio – ADL, BK, Funkero e MV Bill (Prod. Índio).mp3']
+    var img_musicas = ['.img_main', 'img_main2', 'img_main3', 'img_main4', 'img_main5', 'img_main6', 'img_main7', 'img_main8', 'img_main9']
     var audio = new Audio(musicas[musica_random])
     function musicPlay() {
         if (contadorPlays % 2 == 0) {
@@ -95,43 +121,11 @@
         }
         contadorPlays++
     }
-    var contSkip = 0
-    function skipMusic() {
-        if (contSkip == 0) {
-            div_player.classList.remove(img_musicas[0])
-            div_player.classList.add(img_musicas[1])
-            /* document.querySelector(img_musicas[0]).classList.add(img_musicas[1]) */
-        }
-        if (contSkip == 1) {
-            /* document.querySelector(img_musicas[1]).classList.add(img_musicas[2]) */
-            div_player.classList.remove(img_musicas[1])
-            div_player.classList.add(img_musicas[2])
-        }
-        contSkip++
-       /*  musica_random = parseInt(Math.random()*3)  */
-        /* musica_random = contSkip */
-        audio = new Audio(musicas[musica_random])
-    }
-
-/*     function skipMusic2(){
-        for(musica_random = parseInt(Math.random()*3); img_musicas[musica_random];){
-             div_player.classList.remove(img_musicas[musica_random]) 
-            div_player.classList.toggle(img_musicas[musica_random])
-            audio = new Audio(musicas[musica_random])
-            return
-        }
-    } */
-
-
-    function skipMusic2(){
+    function skipMusic2() {
         clearMusic()
-        musica_random = parseInt(Math.random()*4)
+        musica_random = parseInt(Math.random() * 9)
         img_musicas[musica_random]
         div_player.classList.add(img_musicas[musica_random])
         audio = new Audio(musicas[musica_random])
     }
-
-    /*     function returnMusic(){
-            document.querySelector(img_musicas[1]).classList.add(img_musicas[0])
-        } */
 </script>
