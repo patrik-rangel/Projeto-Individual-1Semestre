@@ -75,3 +75,8 @@ function clearQuiz() {
     box_alter2.style.backgroundColor = 'white'
     box_alter3.style.backgroundColor = 'white'
 }
+
+
+function ranking() {
+    window.location.href = 'ranking.html'
+}

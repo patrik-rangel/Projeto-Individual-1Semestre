@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz</title>
     <script src="js/funcoes.js"></script>
-    <link rel="icon" href="./assets/icon/favicon.ico">
+
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -59,21 +59,13 @@
 
     var alternativas1 = ['Facção Central — Versos Sangrentos (1999)', 'Mano Brown, Ice Blue Ed Motta e KL Jay', 'Mano Brown', 'breakdance, DJ, rap e o MC', 'Dexter', 'Dexter e Thaide', 'Racionais Mc’s', 'resposta8.1', 'resposta9.1', 'resposta10.1']
 
-    var alternativas2 = ['Sabotage — Rap é Compromisso (2000)', 'Ice Blue, Mano Brown, Dexter e Ed Motta', 'Sabotage', 'DJ, grafite, rima e MC', 'Rashid', 'Dexter e Mano Brown', 'Haikaiss', 'resposta8.2', 'resposta9.2', 'resposta10.2']
+    var alternativas2 = ['Sabotage — Rap é Compromisso (2000)', 'Ice Blue, Mano Brown, Dexter e Ed Motta', 'Sabotage', 'DJ, grafite, rima e MC', 'Rashid', 'Dexter e Mano Brown', 'Haikass', 'resposta8.2', 'resposta9.2', 'resposta10.2']
 
     var idUsuario = sessionStorage.ID_USUARIO
     var nomeUsuario = sessionStorage.NOME_USUARIO
     var cont = 0
     var cont_acertos = 0
     var cont_erros = 0
-
-
-/*     setInterval(function () {
-        box_alter1.style.backgroundColor = 'white'
-        box_alter2.style.backgroundColor = 'white'
-        box_alter3.style.backgroundColor = 'white'
-    }, 2000) */
-
 
 
     function aparecer_prgt(){
@@ -163,7 +155,6 @@
         if (cont == 10) {
             div_all_conteudo.classList.remove('all_conteudo')
             div_all_conteudo.classList.add('all_conteudo2')
-            /* div_all_conteudo.classList.remove('.all_conteudo') */
             aguardar()
             setTimeout(function () {
                 finalizarAguardar()
@@ -205,25 +196,6 @@
     }
 
     function certo() {
-        /* console.log('acertou') */
-        /*         if (cont == 0) {
-                    box_alter1.style.backgroundColor = 'green'
-                }
-                if (cont == 1) {
-                    box_alter1.style.backgroundColor = 'green'
-                }
-                if (cont == 2) {
-                    box_alter2.style.backgroundColor = 'green'
-                }
-                if (cont == 3) {
-                    box_alter3.style.backgroundColor = 'green'
-                }
-                if (cont == 4) {
-                    box_alter1.style.backgroundColor = 'green'
-                }
-                if (cont == 5) {
-                    box_alter2.style.backgroundColor = 'green'
-                } */
         var value1 = document.getElementById('box_alter1').getAttribute('onclick')
         var value2 = document.getElementById('box_alter2').getAttribute('onclick')
         var value3 = document.getElementById('box_alter3').getAttribute('onclick')
@@ -248,9 +220,6 @@
 
 
     function errado() {
-        /* console.log('errou') */
-        /*         var teste = document.querySelectorAll('.alter')
-                var resultadoTeste = teste.getAttribute('onclick') */
         var value1 = document.getElementById('box_alter1').getAttribute('onclick')
         var value2 = document.getElementById('box_alter2').getAttribute('onclick')
         var value3 = document.getElementById('box_alter3').getAttribute('onclick')
@@ -276,9 +245,5 @@
     function ranking() {
         window.location.href = 'ranking.html'
     }
-
-
-
-
 
 </script>

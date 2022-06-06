@@ -355,7 +355,7 @@ body {
 .footer {
   background-color: #e3b062;
   height: 150px;
-  color: black;
+  color: rgb(0, 0, 0);
   text-shadow: 0px 15px 20px black;
   display: flex;
   font-weight: 200;
@@ -613,11 +613,31 @@ input {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.container_hist{
+  background-color: rgb(0, 0, 0);
+  box-shadow: 5px 5px 15px black;
+  border: solid 1px white;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4% 0%;
+}
+
+
+.texto_hist{
+  padding: 0% 5%;
+}
+
 
 .simulador h2 {
   font-family: 'graffiti';
-  text-shadow: 5px 5px 3px #ECC03D;
+  text-shadow: 5px 5px 10px #ECC03D;
   font-weight: 600;
 }
 

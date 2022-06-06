@@ -6,13 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AcquaTec | Cadastro</title>
+    <title>Cadastro</title>
 
 
     <script src="./js/funcoes.js"></script>
 
 
-    <link rel="icon" href="./assets/icon/favicon.ico">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -76,8 +75,6 @@
                     <span class="tipo_campo">Confirmação da Senha:</span>
                     <input id="confirmacao_senha_input" type="password" placeholder="******">
 
-                    <span class="tipo_campo">Qual sua quebrada?</span>
-                    <input id="quebrada_input" type="text" placeholder="Onde você nasceu">
                     <span class="tipo_campo">Qual região?</span>
                     <select name="" id="regiao_select">
                         <option value="">-- Qual lado? --</option>
@@ -124,11 +121,10 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
-        var quebradaVar = quebrada_input.value;
         var regiaoVar = regiao_select.value;
 
 
-        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || quebradaVar == "" || regiaoVar == "") {
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || regiaoVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
@@ -151,7 +147,6 @@
                 nomeServer: nomeVar,
                 emailServer: emailVar,
                 senhaServer: senhaVar,
-                quebradaServer: quebradaVar,
                 regiaoServer: regiaoVar
             })
         }).then(function (resposta) {
