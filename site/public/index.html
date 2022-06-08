@@ -78,6 +78,9 @@
         contadorPlays++
     }
     function skipMusic2() {
+        audio.pause()
+        spn_play.style.display = 'block'
+        spn_pause.style.display = 'none'
         clearMusic()
         musica_random = parseInt(Math.random() * 9)
         img_musicas[musica_random]
