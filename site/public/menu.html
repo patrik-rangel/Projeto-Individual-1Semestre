@@ -18,12 +18,13 @@
         rel="stylesheet">
 </head>
 
-<body>
+<body onload="validarSessao()">
     <div class="all_menu">
         <div class="all_conteudo_menu">
             <h3>Salve  <span id="ss_usuario">usuário</span>!</h3>
             <button class="btn_menu" onclick="pageQuiz()">Quiz</button>
             <button class="btn_menu" onclick="pageRanking()">Ranking</button>
+            <button class="btn_menu" onclick="limparSessao()">Sair</button>
         </div>
     </div>
 </body>

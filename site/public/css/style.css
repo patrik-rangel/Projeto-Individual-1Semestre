@@ -86,11 +86,13 @@ body {
 }
 
 
-/* .titulo {
-  color: #32b9cd;
+ .titulo {
   width: fit-content;
   font-weight: 500;
-} */
+  font-family: 'cloister';
+  color: white;
+  text-shadow: 0px 5px 10px #ECC03D;
+} 
 
 .logo {
   width: 10vw;
@@ -304,8 +306,9 @@ body {
   text-align: center;
   font-size: 4.5em;
   text-shadow: 2px 2px 10px #ECC03D;
-  margin-top: -1%;
   font-weight: 300;
+  margin-top: -1%
+  ;
 }
 
 
@@ -314,15 +317,16 @@ body {
   width: 30vw;
   height: 55vh;
   margin-top: -12%;
+  justify-content: left;
+  align-items: center;
 }
 
 .list-links {
   color: #ECC03D;
-  font-size: 1.7em;
+  font-size: 2rem;
   font-weight: 600;
   margin-top: 10%;
 }
-
 
 .list-links li {
   padding: 5% 0%;
@@ -685,6 +689,16 @@ input {
   border: solid 3px rgb(255, 255, 255);
 }
 
+.aviso_quiz{
+  background-color: #ECC03D;
+  padding: 1%;
+  margin-top: 3%;
+  font-weight: 800;
+  border: #000000 solid 3px;
+  text-align: center;
+}
+
+
 .all_conteudo {
   background-color: black;
   box-shadow: 5px 5px 10px black;
@@ -1001,4 +1015,33 @@ input {
   align-items: center;
   justify-content: center;
   box-shadow: 5px 5px 10px black;
+}
+
+
+@media only screen and (min-width : 1500px){
+  .list-links{
+    font-size: 3em;
+    margin-top: 15%;
+  }
+  .box-links h2 {
+    color: white;
+    font-family: 'cloister', sans-serif;
+    text-align: center;
+    font-size: 5.5em;
+    text-shadow: 2px 2px 10px #ECC03D;
+    font-weight: 300;
+    margin-top: -1%;
+  }
+  .banner {
+    height: fit-content;
+    padding: 40px 0;
+    height: 68vh;
+    color: white;
+    background-image: url("../assets/imgs-pi/muro-grafiti.jpeg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

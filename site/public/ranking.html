@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ranking</title>
-    <script src="js/funcoes.js"></script>
+    <script src="./js/funcoes.js"></script>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -16,22 +16,12 @@
         rel="stylesheet"> -->
 </head>
 
-<body onload="ranking()"> <!-- arrumar onload -->
+<body onload="validarSessao()">
 
     <div class="all_ranking">
         <div class="box_texto_ranking">
             <h1 class="text_ranking">Os melhores</h1>
         </div>
-        <!--         <div class="box_ranking">
-            <h2>RANKING</h2>
-            <div class="conteudo_box_ranking">
-                <ol class="list_ranking">
-                    <li><span id="primeiro_lugar"><a href="teste.html">MauMau</a></span></li>
-                    <li><span id="segundo_lugar">Uesso</span></li>
-                    <li><span id="terceiro_lugar">Gesso</span></li>
-                </ol>
-            </div>
-        </div> -->
         <div class="grafico_p">
             <section>
                 <canvas id="grafico_acertos" style="width:60vw ; margin-top: 5%;"></canvas>
@@ -45,16 +35,6 @@
     let proximaAtualizacao;
 
     window.onload = obterDadosGrafico(1);
-
-    /* b_usuario.innerHTML = sessionStorage.NOME_USUARIO; */
-
-    /* verificar_autenticacao(); */
-
-    /*     function alterarTitulo(id) {
-            var tituloAquario = document.getElementById("tituloAquario")
-            tituloAquario.innerHTML = "Últimas medidas de Temperatura e Umidade do <span style='color: #e6005a'>Aquário " + id + "</span>"
-        } */
-
     // O gráfico é construído com três funções:
     // 1. obterDadosGrafico -> Traz dados do Banco de Dados para montar o gráfico da primeira vez
     // 2. plotarGrafico -> Monta o gráfico com os dados trazidos e exibe em tela
@@ -67,7 +47,6 @@
     //     Se quiser alterar a busca, ajuste as regras de negócio em src/controllers
     //     Para ajustar o "select", ajuste o comando sql em src/models
     function obterDadosGrafico() {
-        /* alterarTitulo(id) */
 
         if (proximaAtualizacao != undefined) {
             clearTimeout(proximaAtualizacao);
@@ -99,14 +78,6 @@
         var dados = {
             labels: [],
             datasets: [
-                /*                 {
-                                    yAxisID: 'y-umidade',
-                                    label: 'Umidade',
-                                    borderColor: '#32B9CD',
-                                    backgroundColor: '#32b9cd8f',
-                                    fill: true,
-                                    data: []
-                                }, */
                 {
                     yAxisID: 'y-temperatura',
                     label: 'acertos',

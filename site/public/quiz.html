@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
@@ -16,10 +16,13 @@
         rel="stylesheet"> -->
 </head>
 
-<body>
+<body onload="validarSessao()">
 
     <div class="all">
-        <div class="box_btn_comecar" id="box_btn"><button class="btn_comecar" id="btn" onclick="aparecer_prgt()">incio</button></div>
+        <div class="box_btn_comecar" id="box_btn"><button class="btn_comecar" id="btn"
+                onclick="aparecer_prgt()">incio</button>
+            <div class="aviso_quiz">Obs: Apenas sua primeira tentativa vai contar pro ranking!</div>
+        </div>
         <div class="all_conteudo" id="div_all_conteudo">
             <div class="box_pergunta">
                 <p id="div_pergunta"></p>
@@ -41,7 +44,8 @@
                 <img src="assets/ajax-loading-icon-18.gif" id="loading-gif">
             </div>
             <div class="resultado" id="div_resultado">
-                <p id="p_resultado">voce acertou <span id="qtd_acertos" class="contagem"> 10 </span> e errou <span id="qtd_erros" class="contagem"> 0</span></p>
+                <p id="p_resultado">voce acertou <span id="qtd_acertos" class="contagem"> 10 </span> e errou <span
+                        id="qtd_erros" class="contagem"> 0</span></p>
                 <button onclick="ranking()">Ver o ranking</button>
             </div>
         </div>
@@ -68,182 +72,11 @@
     var cont_erros = 0
 
 
-    function aparecer_prgt(){
-        box_btn.style.display = 'none'
-        div_all_conteudo.style.display = 'flex'
-        comecar()
-    }
 
-
-    function comecar() {
-        if (cont == 0) {
-            div_pergunta.innerHTML = perguntas[cont]
-            div_alter1.innerHTML = respostas[cont]
-            div_alter2.innerHTML = alternativas1[cont]
-            div_alter3.innerHTML = alternativas2[cont]
-        }
-        if (cont == 1) {
-            div_pergunta.innerHTML = perguntas[cont]
-            div_alter1.innerHTML = respostas[cont]
-            div_alter2.innerHTML = alternativas1[cont]
-            div_alter3.innerHTML = alternativas2[cont]
-        }
-        if (cont == 2) {
-            document.getElementById('box_alter1').setAttribute('onclick', 'errado()');
-            document.getElementById('box_alter2').setAttribute('onclick', 'certo()');
-            div_pergunta.innerHTML = perguntas[cont]
-            div_alter1.innerHTML = alternativas1[cont]
-            div_alter2.innerHTML = respostas[cont]
-            div_alter3.innerHTML = alternativas2[cont]
-        }
-        if (cont == 3) {
-            document.getElementById('box_alter2').setAttribute('onclick', 'errado()');
-            document.getElementById('box_alter3').setAttribute('onclick', 'certo()');
-            div_pergunta.innerHTML = perguntas[cont]
-            div_alter1.innerHTML = alternativas2[cont]
-            div_alter2.innerHTML = alternativas1[cont]
-            div_alter3.innerHTML = respostas[cont]
-        }
-        if (cont == 4) {
-            document.getElementById('box_alter3').setAttribute('onclick', 'errado()');
-            document.getElementById('box_alter1').setAttribute('onclick', 'certo()');
-            div_pergunta.innerHTML = perguntas[cont]
-            div_alter1.innerHTML = respostas[cont]
-            div_alter2.innerHTML = alternativas1[cont]
-            div_alter3.innerHTML = alternativas2[cont]
-        }
-        if (cont == 5) {
-            document.getElementById('box_alter1').setAttribute('onclick', 'errado()');
-            document.getElementById('box_alter2').setAttribute('onclick', 'certo()');
-            div_pergunta.innerHTML = perguntas[cont]
-            div_alter1.innerHTML = alternativas1[cont]
-            div_alter2.innerHTML = respostas[cont]
-            div_alter3.innerHTML = alternativas2[cont]
-        }
-        if (cont == 6) {
-            document.getElementById('box_alter2').setAttribute('onclick', 'errado()');
-            document.getElementById('box_alter3').setAttribute('onclick', 'certo()');
-            div_pergunta.innerHTML = perguntas[cont]
-            div_alter1.innerHTML = alternativas1[cont]
-            div_alter2.innerHTML = alternativas2[cont]
-            div_alter3.innerHTML = respostas[cont]
-        }
-        if (cont == 7) {
-            document.getElementById('box_alter3').setAttribute('onclick', 'errado()');
-            document.getElementById('box_alter1').setAttribute('onclick', 'certo()');
-            div_pergunta.innerHTML = perguntas[cont]
-            div_alter1.innerHTML = respostas[cont]
-            div_alter2.innerHTML = alternativas2[cont]
-            div_alter3.innerHTML = alternativas1[cont]
-        }
-        if (cont == 8) {
-            document.getElementById('box_alter1').setAttribute('onclick', 'errado()');
-            document.getElementById('box_alter3').setAttribute('onclick', 'certo()');
-            div_pergunta.innerHTML = perguntas[cont]
-            div_alter1.innerHTML = alternativas1[cont]
-            div_alter2.innerHTML = alternativas2[cont]
-            div_alter3.innerHTML = respostas[cont]
-        }
-        if (cont == 9) {
-            document.getElementById('box_alter3').setAttribute('onclick', 'errado()');
-            document.getElementById('box_alter2').setAttribute('onclick', 'certo()');
-            div_pergunta.innerHTML = perguntas[cont]
-            div_alter1.innerHTML = alternativas1[cont]
-            div_alter2.innerHTML = respostas[cont]
-            div_alter3.innerHTML = alternativas2[cont]
-        }
-        if (cont == 10) {
-            div_all_conteudo.classList.remove('all_conteudo')
-            div_all_conteudo.classList.add('all_conteudo2')
-            aguardar()
-            setTimeout(function () {
-                finalizarAguardar()
-            }, 3050)
-            setTimeout(function () {
-                div_resultado.style.display = 'flex'
-                qtd_acertos.innerHTML = `${cont_acertos}`
-                qtd_erros.innerHTML = `${cont_erros}`
-            }, 3500)
-            eviarQuizBanco()
-        }
-    }
-
-    function eviarQuizBanco() {
-        fetch("/medidas/enviarQuiz", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/medidas.js
-                idUsuarioServer: idUsuario,
-                nomeUsuarioServer: nomeUsuario,
-                acertosServer: cont_acertos
-            })
-        }).then(function (resposta) {
-            if (!Response.ok) throw new Error('Erro na requisição')
-            console.log('erro no fetch')
-            console.log("resposta: ", resposta);
-
-        }
-        ).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        }).catch(function (error) {
-            console.error(error.message)
-        });
-
-    }
-
-    function certo() {
-        var value1 = document.getElementById('box_alter1').getAttribute('onclick')
-        var value2 = document.getElementById('box_alter2').getAttribute('onclick')
-        var value3 = document.getElementById('box_alter3').getAttribute('onclick')
-        if (value1 == 'certo()') {
-            box_alter1.style.backgroundColor = 'green'
-        }
-        if (value2 == 'certo()') {
-            box_alter2.style.backgroundColor = 'green'
-        }
-        if (value3 == 'certo()') {
-            box_alter3.style.backgroundColor = 'green'
-        }
-        cont++
-        cont_acertos++
-        setTimeout(function () {
-            clearQuiz()
-        }, 900)
-        setTimeout(function () {
-            comecar()
-        }, 1000)
-    }
-
-
-    function errado() {
-        var value1 = document.getElementById('box_alter1').getAttribute('onclick')
-        var value2 = document.getElementById('box_alter2').getAttribute('onclick')
-        var value3 = document.getElementById('box_alter3').getAttribute('onclick')
-        if (value1 == 'errado()') {
-            box_alter1.style.backgroundColor = 'red'
-        }
-        if (value2 == 'errado()') {
-            box_alter2.style.backgroundColor = 'red'
-        }
-        if (value3 == 'errado()') {
-            box_alter3.style.backgroundColor = 'red'
-        }
-        cont++
-        cont_erros++
-        setTimeout(function () {
-            clearQuiz()
-        }, 900)
-        setTimeout(function () {
-            comecar()
-        }, 1000)
-    }
-
-    function ranking() {
-        window.location.href = 'ranking.html'
-    }
+    /*     comecar() 
+        eviarQuizBanco()
+        certo()
+        errado()
+        ranking() */
 
 </script>
